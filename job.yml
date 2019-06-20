@@ -1,0 +1,19 @@
+!Job
+target: !Target
+  head: a0e1fbb9ef51d05a3f28e221cf8c5d4031a50c93
+  email: unkown
+  branch: master
+  remote: https://github.com/apache/arrow
+  version: 0.13.0.dev444
+  no_rc_version: 0.13.0.dev444
+tasks:
+  wheel-osx-cp37m: !Task
+    platform: osx
+    template: python-wheels/travis.osx.yml
+    artifacts:
+    - pyarrow-0.13.0.dev444-cp37-cp37m-macosx_10_6_intel.whl
+    params:
+      python_version: 3.7
+    branch: build-6-wheel-osx-cp37m
+    commit: c122dadd7718fbaea56001a452cbd646f99e6784
+branch: build-6
