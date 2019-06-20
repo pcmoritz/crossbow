@@ -1,0 +1,22 @@
+!Job
+target: !Target
+  head: a0e1fbb9ef51d05a3f28e221cf8c5d4031a50c93
+  email: unkown
+  branch: master
+  remote: https://github.com/apache/arrow
+  version: 0.13.0.dev444
+  no_rc_version: 0.13.0.dev444
+tasks:
+  wheel-linux-cp35m: !Task
+    platform: linux
+    template: python-wheels/travis.linux.yml
+    artifacts:
+    - pyarrow-0.13.0.dev444-cp35-cp35m-manylinux1_x86_64.whl
+    params:
+      python_version: 3.5
+      unicode_width: 16
+      test_docker_images:
+      - python:3.5-slim
+    branch: build-2-wheel-linux-cp35m
+    commit: ef17b08bb6876234f4637c942a566f609d37a2ca
+branch: build-2
