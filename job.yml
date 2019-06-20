@@ -1,0 +1,22 @@
+!Job
+target: !Target
+  head: 8fab2e5746d74e3120e06bdf7f66c894170011e6
+  email: unkown
+  branch: ARROW-5670
+  remote: https://github.com/wesm/arrow
+  version: 0.0.dev4363
+  no_rc_version: 0.0.dev4363
+tasks:
+  wheel-linux-cp36m: !Task
+    platform: linux
+    template: python-wheels/travis.linux.yml
+    artifacts:
+    - pyarrow-0.0.dev4363-cp36-cp36m-manylinux1_x86_64.whl
+    params:
+      python_version: 3.6
+      unicode_width: 16
+      test_docker_images:
+      - python:3.6-slim
+    branch: build-10-wheel-linux-cp36m
+    commit: b8a405629bd690cd00e2487d9c5eb13467f0a722
+branch: build-10
