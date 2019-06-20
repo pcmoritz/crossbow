@@ -1,0 +1,19 @@
+!Job
+target: !Target
+  head: 8fab2e5746d74e3120e06bdf7f66c894170011e6
+  email: unkown
+  branch: ARROW-5670
+  remote: https://github.com/wesm/arrow
+  version: 0.0.dev4363
+  no_rc_version: 0.0.dev4363
+tasks:
+  wheel-osx-cp35m: !Task
+    platform: osx
+    template: python-wheels/travis.osx.yml
+    artifacts:
+    - pyarrow-0.0.dev4363-cp35-cp35m-macosx_10_6_intel.whl
+    params:
+      python_version: 3.5
+    branch: build-9-wheel-osx-cp35m
+    commit: 08a513c144d43f42c5c1a2f55856e775905e4b52
+branch: build-9
