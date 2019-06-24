@@ -1,0 +1,20 @@
+!Job
+target: !Target
+  head: 908df587af8dc9c7c8ce7bbc02ecd4c362f5a47b
+  email: unkown
+  branch: fix-mac-wheels
+  remote: https://github.com/pcmoritz/arrow.git
+  version: 0.13.0.dev477
+  no_rc_version: 0.13.0.dev477
+tasks:
+  wheel-osx-cp36m: !Task
+    ci: travis
+    platform: osx
+    template: python-wheels/travis.osx.yml
+    artifacts:
+    - pyarrow-0.13.0.dev477-cp36-cp36m-macosx_10_6_intel.whl
+    params:
+      python_version: 3.6
+    branch: build-19-travis-wheel-osx-cp36m
+    commit: 0f23b2560de087d455b71c3a3c0816dbe91a0c8a
+branch: build-19
