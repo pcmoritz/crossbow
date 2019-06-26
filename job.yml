@@ -1,0 +1,20 @@
+!Job
+target: !Target
+  head: ad5155eef78782822ae24aa8fca1b64b524e4b07
+  email: unkown
+  branch: mac-wheels-py2
+  remote: https://github.com/pcmoritz/arrow
+  version: 0.1.0.dev4258
+  no_rc_version: 0.1.0.dev4258
+tasks:
+  wheel-osx-cp27m: !Task
+    ci: travis
+    platform: osx
+    template: python-wheels/travis.osx.yml
+    artifacts:
+    - pyarrow-0.1.0.dev4258-cp27-cp27m-macosx_10_6_intel.whl
+    params:
+      python_version: 2.7
+    branch: build-27-travis-wheel-osx-cp27m
+    commit: 95de98ac737e76e358548ce15c01d14921bbcbc5
+branch: build-27
